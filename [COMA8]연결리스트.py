@@ -105,7 +105,7 @@ def mergeTwoLists(self, l1:ListNode, l2:ListNode) -> ListNode:
 # 연결리스트를 뒤집어라
 # input = 1->2->3->4->5->NULL
 # output = 5->4->3->2->1->NULL
-# 설명 : Could you do it in O(n) time and O(1) space?
+#
 #######################################################################
 """
 1|2 -- 2|3 -- 3|4 -- 4|5 -- 5|None
@@ -118,6 +118,27 @@ def reverseList(head: ListNode) -> ListNode:
         next, node.next = node.next, prev
         prev, node = node, next
     return prev
+
+"""
+node : 1|2
+prev : None
+--------------------------------1 - 1|2
+118
+next : 2를 가리키는 2|3
+node.next : None
+
+119
+prev : 1|None
+node : 2를 가리키는 2|3
+------------------------------2 - 2|3
+118
+next : 3를 가리키는 3|4
+node.next : 1|None
+
+119
+prev : 2|1
+node : 3를 가리키는 3|4
+"""
 
 ###########################################
 class ListNode:
@@ -139,14 +160,14 @@ node4.next = node5
 reverseList(node1)
 
 ############################### id 주소값 보기
-node = node1 #node5
+node = node5 #node5
 while node:
     print("{} : {} | {}".format(node.val,id(node),id(node.next)))
     node = node.next
 
 
 ############################## 객체로 바로 보기
-node = node5
+node = node1
 while node:
     print("{} : {} | {}".format(node.val,node,node.next))
     node = node.next
