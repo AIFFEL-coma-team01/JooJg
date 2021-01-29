@@ -47,6 +47,8 @@ def reverseList(head: ListNode) -> ListNode:
         next, node.next = node.next, prev
         prev, node = node, next
     return prev
+############################## 함수 실행
+reverseList(node1) #node1이 처음 연결 객체니까..
 
 """
 node : 1|2
@@ -69,8 +71,6 @@ prev : 2|1
 node : 3이 가리키는 3|4
 """
 
-############################## 함수 실행
-reverseList(node1) #node1이 처음 연결 객체니까..
 ############################### 결과값 확인 : 연결리스트기 때문에 반복문을 사용해야 함
 node = node5 #reverse 되면 node5가 처음 값이 되니까...
 ################ ID값으로 보기
